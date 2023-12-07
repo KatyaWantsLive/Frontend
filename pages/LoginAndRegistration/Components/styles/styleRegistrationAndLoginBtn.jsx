@@ -4,15 +4,15 @@ const styleRegistrationAndLoginBtn = StyleSheet.create({
     container: {
         width: '80%',
         height: '10%',
-        backgroundColor: 'gray',
+        backgroundColor: '#ededed',
         flexDirection: 'row',
         justifyContent: 'space-between',
         borderTopLeftRadius: '30%',
-        borderTopEndRadius: '30%'
+        borderTopEndRadius: '30%',
+        borderWidth: 1,
     },
     registrationBtn: {
         width: '50%',
-        backgroundColor: 'gray',
         borderTopEndRadius: '30%'
         
     },

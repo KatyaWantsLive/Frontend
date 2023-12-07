@@ -1,11 +1,19 @@
-import { View, Button } from "react-native";
+import { View, Button} from "react-native";
 import styleRegistrationAndLoginBtn from "./styles/styleRegistrationAndLoginBtn";
+
+const LoginPress = () => {
+    console.log('разраб пидор')
+}
+
+const RegPress = () => {
+    console.log('когда патч в доте')
+}
 
 const RegistrationAndLoginBtn = () => {
     return (
         <View style={styleRegistrationAndLoginBtn.container}>
-            <View style={styleRegistrationAndLoginBtn.loginBtn}><Button title="Login"></Button></View>
-            <View style={styleRegistrationAndLoginBtn.registrationBtn}><Button title="Registration"></Button></View>
+            <View style={styleRegistrationAndLoginBtn.loginBtn}><Button title="Login" onPress={LoginPress}></Button></View>
+            <View style={styleRegistrationAndLoginBtn.registrationBtn}><Button title="Registration" onPress={RegPress}></Button></View>
         </View>
     )
 }
