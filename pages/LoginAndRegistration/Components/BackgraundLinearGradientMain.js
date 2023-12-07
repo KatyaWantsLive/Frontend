@@ -7,7 +7,6 @@ const BackgraundLinearGradientMain = () => {
     return (
         <LinearGradient colors={['#F5EFFF', '#F5EFFF']} style={styleLinearGradientMain.sizeMain}>
             <RegistrationAndLoginBtn />
-            <LoginForm />
         </LinearGradient>
     )
 }

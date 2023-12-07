@@ -1,20 +1,41 @@
-import { View, Button} from "react-native";
+import { useState } from "react";
+import { View, Button, Text, VirtualizedList} from "react-native";
 import styleRegistrationAndLoginBtn from "./styles/styleRegistrationAndLoginBtn";
+import LoginForm from "./LoginForm";
+import RegForm from "./RegForm";
 
-const LoginPress = () => {
-    console.log('разраб пидор')
-}
-
-const RegPress = () => {
-    console.log('когда патч в доте')
-}
 
 const RegistrationAndLoginBtn = () => {
+    const [isLogin, setIsLogin] = useState(true);
+    
+    const LoginPress = () => {
+        setIsLogin(true)
+    }
+
+    const RegPress = () => {
+        setIsLogin(false)
+    }
+
     return (
-        <View style={styleRegistrationAndLoginBtn.container}>
-            <View style={styleRegistrationAndLoginBtn.loginBtn}><Button title="Login" onPress={LoginPress} color={'black'}></Button></View>
-            <View style={styleRegistrationAndLoginBtn.registrationBtn}><Button title="Registration" onPress={RegPress} color={'black'}></Button></View>
-        </View>
+        <View style={{ height: '100%'}}>
+            {isLogin ? (
+                <View style={{height: '100%', width: '100%'}}>
+                    <View style={styleRegistrationAndLoginBtn.container}>
+                        <View style={styleRegistrationAndLoginBtn.loginBtn}><Button title='Логин' color='black' onPress={LoginPress}></Button></View>
+                        <View style={styleRegistrationAndLoginBtn.registrationBtn}><Button title='Регистрация' color='black' onPress={RegPress}></Button></View>
+                    </View>
+                    <View><LoginForm></LoginForm></View>
+                </View>
+            ) : (
+                <View style={{height: '100%', width: '100%'}}>
+                    <View style={styleRegistrationAndLoginBtn.container}>
+                        <View style={styleRegistrationAndLoginBtn.loginBtn}><Button title='Регистрация' color='black' onPress={RegPress}></Button></View>
+                        <View style={styleRegistrationAndLoginBtn.registrationBtn}><Button title='Логин' color='black' onPress={LoginPress}></Button></View>
+                    </View>
+                    <View><RegForm></RegForm></View>
+                </View>
+            )}
+        </View>        
     )
 }
 

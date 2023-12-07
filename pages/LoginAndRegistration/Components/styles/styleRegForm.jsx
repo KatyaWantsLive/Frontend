@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
 
-const styleLoginForm = StyleSheet.create({
+const styleRegForm = StyleSheet.create ({
     container: {
         flexDirection: 'column',
         alignItems: 'center',
         width: '100%',
-        height: '90%',
+        height: '94%',
         backgroundColor: 'white',
         borderBottomWidth: 0.5,
         borderEndWidth: 0.5,
@@ -20,7 +20,7 @@ const styleLoginForm = StyleSheet.create({
 
     input: {
         paddingLeft: 20,
-        height: '15%',
+        height: '10%',
         width: '80%',
         marginTop: 30,
         borderWidth: 1,
@@ -30,9 +30,10 @@ const styleLoginForm = StyleSheet.create({
     loginBtn: {
         width: '80%',
         borderWidth: 1,
-        marginTop: 45,
+        marginTop: 30,
         borderRadius: '10%'
     }
+
 })
 
-export default styleLoginForm
+export default styleRegForm

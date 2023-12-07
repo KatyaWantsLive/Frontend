@@ -1,4 +1,4 @@
-import { View } from "react-native";
+import { View, } from "react-native";
 import stylesMain from "./styles/styleMain";
 import BackgraundLinerGradientHeader from "./BackgraundLinearGradientHeader";
 import BackgraundLinearGradientMain from "./BackgraundLinearGradientMain";
