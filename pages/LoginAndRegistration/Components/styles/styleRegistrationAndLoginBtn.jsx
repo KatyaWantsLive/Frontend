@@ -9,7 +9,9 @@ const styleRegistrationAndLoginBtn = StyleSheet.create({
         justifyContent: 'space-between',
         borderTopLeftRadius: '30%',
         borderTopEndRadius: '30%',
-        borderWidth: 1,
+        borderTopWidth: 0.5,
+        borderEndWidth: 0.5,
+        borderStartWidth: 0.5,
     },
     registrationBtn: {
         width: '50%',

@@ -12,8 +12,8 @@ const RegPress = () => {
 const RegistrationAndLoginBtn = () => {
     return (
         <View style={styleRegistrationAndLoginBtn.container}>
-            <View style={styleRegistrationAndLoginBtn.loginBtn}><Button title="Login" onPress={LoginPress}></Button></View>
-            <View style={styleRegistrationAndLoginBtn.registrationBtn}><Button title="Registration" onPress={RegPress}></Button></View>
+            <View style={styleRegistrationAndLoginBtn.loginBtn}><Button title="Login" onPress={LoginPress} color={'black'}></Button></View>
+            <View style={styleRegistrationAndLoginBtn.registrationBtn}><Button title="Registration" onPress={RegPress} color={'black'}></Button></View>
         </View>
     )
 }
