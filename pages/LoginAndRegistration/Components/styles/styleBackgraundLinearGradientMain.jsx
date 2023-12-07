@@ -5,6 +5,8 @@ const styleLinearGradientMain = StyleSheet.create({
         height: '70%',
         width: '100%',
         backgroundColor: '#F5EFFF',
+        flex: 1,
+        alignItems: 'center',
     }
 })
 
