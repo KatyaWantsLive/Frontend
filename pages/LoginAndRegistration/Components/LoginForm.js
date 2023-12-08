@@ -3,10 +3,20 @@ import styleLoginForm from "./styles/styleLoginForm";
 import axios from "axios";
 import { useState } from "react";
 
+const [isLogin, setIsLogin] = useState(false)
 
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+    
+
+    const TrueLogin = () => {
+        setIsLogin(true)
+    }
+
+    const FalseLogin = () => {
+        setIsLogin(false)
+    }
 
     const HandlerLogin = async () => {
         try {
@@ -14,9 +24,9 @@ const LoginForm = () => {
                 "username" : username,
                 "password" : password
             });
-            console.log('Ура мы молодцы', response.status);
+            console.log('Ура мы молодцы', response.status), TrueLogin;
         } catch (error) {
-            console.error('Ошибка =(', error)
+            console.error('Ошибка =(', error), FalseLogin;
         }
     }
     return (
