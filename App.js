@@ -7,7 +7,7 @@ import Main from "./pages/Main/Components/Main";
 const App = () => {
   return ( 
     <View style={stylesApp.continer}>
-      <Main />
+      <LoginAndRegMain />
     </View>
   )
 }
