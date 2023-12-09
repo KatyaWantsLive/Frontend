@@ -1,9 +1,18 @@
-import { View } from "react-native";
+import React from 'react';
+import { WebView } from 'react-native-webview';
 
-const MainMap = () => {
-    return (
-        <View />
-    )
-}
+const Map = () => {
+  const runFirst = `
+    window.isNativeApp = true;
+    true;
+  `;
 
-export default MainMap
+  return (
+    <WebView
+      source={require('../../../map/custom_map.html')}
+      injectedJavaScript={runFirst}
+    />
+  );
+};
+
+export default Map;
