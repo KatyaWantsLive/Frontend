@@ -1,32 +1,33 @@
+import React from "react";
 import { View, TextInput, Button } from "react-native";
 import styleLoginForm from "./styles/styleLoginForm";
 import axios from "axios";
 import { useState } from "react";
-
-const [isLogin, setIsLogin] = useState(false)
+import { useNavigation } from "@react-navigation/native";
 
 const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
+
+    const navigation = useNavigation();
     
-
-    const TrueLogin = () => {
-        setIsLogin(true)
-    }
-
-    const FalseLogin = () => {
-        setIsLogin(false)
-    }
-
+    
     const HandlerLogin = async () => {
         try {
             const response = await axios.post('https://jhdg-kjhdghj.onrender.com/user/login', {
                 "username" : username,
                 "password" : password
             });
-            console.log('Ура мы молодцы', response.status), TrueLogin;
+            if (response.status === 200) {
+                setUsername('')
+                setPassword('')
+                console.log('ебанты')
+                navigation.navigate('Main')
+            } else {
+                console.log('я пидор')
+            }
         } catch (error) {
-            console.error('Ошибка =(', error), FalseLogin;
+            console.error('Ошибка =(', error);
         }
     }
     return (
@@ -38,4 +39,4 @@ const LoginForm = () => {
     )
 }
 
-export default LoginForm
+export default LoginForm;
