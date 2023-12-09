@@ -9,7 +9,7 @@ const Map = () => {
 
   return (
     <WebView
-      source={require('../../../map/custom_map.html')}
+      source={require('../../../custom_map.html')}
       injectedJavaScript={runFirst}
     />
   );
