@@ -35,7 +35,7 @@ const LoginForm = () => {
     return (
         <View style={styleLoginForm.container}>
             <TextInput placeholder="username" style={styleLoginForm.input} onChangeText={setUsernameLogin}></TextInput>
-            <TextInput placeholder="password" style={styleLoginForm.input} onChangeText={setPassword}></TextInput>
+            <TextInput placeholder="password" style={styleLoginForm.input} onChangeText={setPassword} secureTextEntry={true}></TextInput>
             <View style={styleLoginForm.loginBtn}><Button title="Войти" style={styleLoginForm.loginBtn} color={'black'} onPress={HandlerLogin}></Button></View>
         </View>
     )

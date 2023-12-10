@@ -270,6 +270,32 @@ var campus = {
         ]
     }
 };
+var latlngs = [
+    [ 0, 0],
+    [ 423.596247303523057, -966.116827513901512 ]
+];
+
+var geojsonFeature = {
+    "type": "Feature",
+    "geometry": {
+        "type": "LineString",
+        "coordinates": [
+        [ 302.942263136421388, -720.594841350330057 ],
+        [ 423.596247303523057, -966.116827513901512 ] 
+    ]
+    },
+    "properties": {
+        "name": "Coors Field",
+        "amenity": "Baseball Stadium",
+        "popupContent": "This is where the Rockies play!"
+    }
+};
+
+var myStyle = {
+    "color": "#ff7800",
+    "weight": 5,
+    "opacity": 0.65
+};
 
 var coorsField = {
     "type": "Feature",
@@ -291,7 +317,7 @@ var coorsField = {
 	});
 
 	const bounds = [[0, 0], [1340, 2240]];
-	const image = L.imageOverlay('карта.svg', bounds).addTo(map);
+	const image= L.imageOverlay('карта.svg', bounds).addTo(map);
 
 	map.fitBounds(bounds);
 
@@ -302,15 +328,26 @@ var coorsField = {
 	L.geojson(geojson).addTo(map)
 
 	data = 'дороги.geojson'
+    
+// Создаем объект Polyline
+    var polyline = L.polyline(latlngs, {
+        color: 'black',
+        weight: 10,
+        opacity: 0.5,
+        smoothFactor: 1
+    });
 
-	L.geoJson(data, {
-	style: function (feature) {
-		return {color: feature.properties.color};
-	},
+    polyline.addTo(image);
+
+	L.geoJson(geojsonFeature, {
+    style: myStyle,
+    onEachFeature: function (feature, layer) {
+        layer.bindPopup(feature.properties.popupContent);
+    },
 	onEachFeature: function (feature, layer) {
 		layer.bindPopup(feature.properties.description);
 	}
-	}).addTo(map);
+	}).addTo(image);
 
 </script>
 

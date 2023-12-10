@@ -18,7 +18,7 @@ const RegForm = () => {
                 "phone_number": number,
                 "password": password,
             });
-            console.log('Данные успешно отправлены', response.data);
+            console.log('Данные успешно отправлены', response.data, password);
         } catch (error) {
             console.error('Ошибка отправки данных', error);
         }
@@ -29,7 +29,7 @@ const RegForm = () => {
             <TextInput placeholder="username" style={styleRegForm.input} onChangeText={setUsername}></TextInput>
             <TextInput placeholder="name" style={styleRegForm.input} onChangeText={setYourname}></TextInput>
             <TextInput placeholder="+7 (***) *** **-**" style={styleRegForm.input} onChangeText={setNumber}></TextInput>
-            <TextInput placeholder="password" style={styleRegForm.input} onChangeText={setPassword}></TextInput>
+            <TextInput placeholder="password" style={styleRegForm.input} onChangeText={setPassword} secureTextEntry={true}></TextInput>
             <View style={styleRegForm.loginBtn}><Button title="Зарегистрироваться" style={styleRegForm.loginBtn} color={'black'} onPress={HandleRegistration}></Button></View>
         </View>
     )
